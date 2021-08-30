@@ -14,7 +14,7 @@ int largestSubArraySum(int arr[], int n) {
 
   for (int i = 0; i < n; i++) {
     for (int j = i; j < n; j++) {
-      int SubArraySum = prefix[j] - prefix[i - 1];
+      int SubArraySum = i>0 ? prefix[j] - prefix[i - 1] : prefix[j];
 
       largestSum = max(SubArraySum, largestSum);
     }
